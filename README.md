@@ -18,6 +18,16 @@ npm run build        # dist/ ga production build
 npm run preview      # build natijasini lokal ko'rish
 ```
 
+## Deploy (Vercel)
+
+GitHub `main` branch'iga push qilinganda Vercel avtomatik production deploy qiladi. Sozlamalar `vercel.json`da:
+
+- Framework: Vite, Root Directory: repository root
+- Install: `npm ci`, Build: `npm run build`, Output: `dist`
+- SPA rewrite: `/admin/leads` kabi route'lar to'g'ridan-to'g'ri ochilganda `index.html` qaytadi; `/assets/*` va kengaytmali fayllar rewrite qilinmaydi (topilmasa 404).
+
+Environment variable, backend yoki ma'lumotlar bazasi talab qilinmaydi.
+
 ## Demo kirish
 
 Login sahifasida **Demo Admin** yoki **Demo Sotuvchi** tugmasini bosing, yoki:
